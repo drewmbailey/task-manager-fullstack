@@ -1,0 +1,4 @@
+INSERT INTO TASK (TITLE, DESCRIPTION, STATUS, CREATED_AT, UPDATED_AT) VALUES
+('Buy groceries', 'Milk, eggs, bread', 'OPEN', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()),
+('Finish portfolio site', 'Polish projects page', 'IN_PROGRESS', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()),
+('Read Effective Java', 'Items 1-10', 'DONE', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
