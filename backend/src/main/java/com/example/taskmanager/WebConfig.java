@@ -14,8 +14,16 @@ public class WebConfig {
             @Override
             public void addCorsMappings(@NonNull CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:5173", "http://127.0.0.1:5173")
-                        .allowedMethods("GET","POST","PUT","DELETE","PATCH");
+                        .allowedOriginPatterns(
+                            "http://localhost:5173", 
+                            "http://127.0.0.1:5173", 
+                            "https://*.up.railway.app",
+                            "https://*.railway.app"
+                        )
+                        .allowedMethods("GET","POST","PUT","DELETE","PATCH","OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true)
+                        .maxAge(3600);
             }
         };
     }
