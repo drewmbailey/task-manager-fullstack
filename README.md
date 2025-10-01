@@ -1,6 +1,6 @@
 # Task Manager (Java + React)
 
-A simple full-stack project you can deploy and showcase on your portfolio.
+A simple full stack task manager using a Java backend and a React frontend.
 
 ## Stack
 - **Backend**: Java 17, Spring Boot 3, JPA/H2, Validation, springdoc-openapi (Swagger UI)
@@ -23,7 +23,11 @@ npm run dev
 ```
 App: `http://localhost:5173`
 
-## Deploy ideas
-- Render.com / Railway for backend
-- Netlify / Vercel for frontend (point proxy to deployed backend)
-- Add CORS origins in `WebConfig.java` for your deployed domain.
+### Production
+Test production setup locally: 
+```bash
+cd backend
+mvn -Dspring-boot.run.profiles=prod spring-boot:run
+```
+
+## Hosting
