@@ -17,6 +17,7 @@ frontend/pnpm-debug.log*
 frontend/dist/
 frontend/build/
 frontend/.vite/
+frontend/tsconfig.tsbuildinfo
 
 # Environment variables
 frontend/.env
@@ -113,6 +114,13 @@ backend/dependency-reduced-pom.xml
 backend/buildNumber.properties
 backend/.mvn/timing.properties
 backend/.mvn/wrapper/maven-wrapper.jar
+
+# Node.js (installed by Maven frontend plugin)
+backend/node/
+frontend/node/
+
+# Node modules
+**/node_modules/
 
 # Compiled class files
 backend/**/*.class
