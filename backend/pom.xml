@@ -91,7 +91,7 @@
               <goal>install-node-and-npm</goal>
             </goals>
             <configuration>
-              <nodeVersion>v18.19.0</nodeVersion>
+              <nodeVersion>v20.19.0</nodeVersion>
               <!-- optional but explicit; remove if you prefer Node’s bundled npm -->
               <npmVersion>10.2.4</npmVersion>
             </configuration>
@@ -136,9 +136,11 @@
               <outputDirectory>${project.build.outputDirectory}/static</outputDirectory>
               <resources>
                 <resource>
-                  <directory>../frontend/dist</directory>
+                  <directory>${project.basedir}/../frontend/dist</directory>
                 </resource>
               </resources>
+              <useDefaultDelimiters>false</useDefaultDelimiters>
+              <suppressUnsupportedResourceType>true</suppressUnsupportedResourceType>
             </configuration>
           </execution>
         </executions>
