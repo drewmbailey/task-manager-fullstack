@@ -1,5 +1,6 @@
 import React from "react";
 import type { Task } from "../types";
+import { LightButton, MediumButton, DarkButton } from "./ButtonVariants";
 
 interface TaskItemProps {
   task: Task;
@@ -15,10 +16,14 @@ export default function TaskItem({
   onDelete,
 }: TaskItemProps) {
   return (
-    <li className="border border-gray-300 p-3 rounded-lg">
+    <li className="border-gray-400 border-2 p-3">
       <div className="flex justify-between">
         <strong>{task.title}</strong>
-        <span className="text-xs px-2 py-1 bg-gray-100 rounded">
+        <span 
+          className={`text-xs px-2 py-1 ${
+            task.status === "OPEN" ? "bg-gray-300" : "bg-gray-500 text-white"
+          }`}
+        >
           {task.status}
         </span>
       </div>
@@ -30,25 +35,25 @@ export default function TaskItem({
       </small>
       <div className="mt-2 flex gap-2">
         {task.status !== "DONE" && (
-          <button
-            className="px-2 py-1 bg-blue-500 text-white rounded text-xs hover:bg-blue-600"
+          <LightButton
+            className="px-2 py-1 text-xs"
             onClick={() => onComplete(task.id)}
           >
             Complete
-          </button>
+          </LightButton>
         )}
-        <button
-          className="px-2 py-1 bg-yellow-500 text-white rounded text-xs hover:bg-yellow-600"
+        <MediumButton
+          className="px-2 py-1 text-xs"
           onClick={() => onEdit(task)}
         >
           Edit
-        </button>
-        <button
-          className="px-2 py-1 bg-red-500 text-white rounded text-xs hover:bg-red-600"
+        </MediumButton>
+        <DarkButton
+          className="px-2 py-1 text-xs"
           onClick={() => onDelete(task.id)}
         >
           Delete
-        </button>
+        </DarkButton>
       </div>
     </li>
   );
